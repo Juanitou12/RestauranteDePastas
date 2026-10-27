@@ -1,5 +1,6 @@
-using System;
+using UnityEngine;
 
+// Clase de datos pura (no es MonoBehaviour): guarda un pedido y calcula su total
 public class Pedido
 {
     public string plato { get; private set; }
@@ -12,10 +13,7 @@ public class Pedido
         this.plato = plato;
         this.salsa = salsa;
         this.cantidad = cantidad;
-        
-        // Genera un precio aleatorio por plato entre 10 y 25
-        Random rng = new Random();
-        this.precioUnitario = rng.Next(10, 26);
+        this.precioUnitario = Random.Range(10, 26);   // precio aleatorio por plato entre 10 y 25
     }
 
     public string ObtenerDescripcion()
